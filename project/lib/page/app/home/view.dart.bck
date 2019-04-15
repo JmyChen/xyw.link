@@ -1,0 +1,132 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+
+import 'package:project/common/app.dart';
+
+class PageHome extends StatefulWidget {
+  _PageHomeState createState() => _PageHomeState();
+}
+
+class _PageHomeState extends State<PageHome> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: app.theme.main.primaryColor,
+      floatingActionButton: Container(
+        child: FloatingActionButton(
+          child:Icon(Icons.music_note),
+          onPressed: (){
+
+          },
+        ),
+      ),
+      body: ViewWrap(),
+    );
+  }
+}
+
+
+class ViewWrap extends StatefulWidget {
+  _ViewWrapState createState() => _ViewWrapState();
+}
+
+class _ViewWrapState extends State<ViewWrap> {
+  var _first = true;
+  @override
+  Widget build(BuildContext context) {
+    return(
+      Container(
+        child: GestureDetector(
+          onTap: (){setState(() {_first = !_first;});},
+          child: Container(
+            color: app.theme.transparentColor,//如果不使用颜色会导致 点击空白侧无效 原因不明
+            child: app.componet.fadeCross.getNew(ViewText(), ViewPanel(), _first),
+          ),
+        ),
+      )
+    );
+  }
+}
+
+class ViewText extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Text(
+          "陌上人如玉，公子世无双。",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ViewPanel extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return(
+      Center(
+        child: Flex(
+          direction: Axis.vertical,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Flex(
+              direction: Axis.horizontal,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.all(15),
+                  child: IconButton(
+                    iconSize: 50,
+                    color: Colors.white,
+                    icon: Icon(app.componet.fontIcon.getData(0xe605)),
+                    onPressed: (){},
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(15),
+                  child: IconButton(
+                    iconSize: 50,
+                    color: Colors.white,
+                    icon: Icon(app.componet.fontIcon.getData(0xe688)),
+                    onPressed: (){},
+                  ),
+                ),
+              ],
+            ),
+            Flex(
+              direction: Axis.horizontal,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.all(15),
+                  child: IconButton(
+                    iconSize: 50,
+                    color: Colors.white,
+                    icon: Icon(app.componet.fontIcon.getData(0xe61c)),
+                    onPressed: (){},
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(15),
+                  child: IconButton(
+                    iconSize: 50,
+                    color: Colors.white,
+                    icon: Icon(app.componet.fontIcon.getData(0xe670)),
+                    onPressed: (){
+                     
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      )
+    );
+  }
+}
