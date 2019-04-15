@@ -13,7 +13,7 @@ void main(){
 }
 
 void onEntry(){
-  print("tk 3");
+  print("Chen 3");
   runApp(app.page.main);
 }
 
