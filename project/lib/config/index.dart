@@ -5,7 +5,7 @@ class ConfigList {
   String theme;
 
   ConfigList(){
-    appName = "律";
+    appName = "校园网";
     verison = "1.0.1";
     theme = "main";
   }

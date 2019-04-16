@@ -11,7 +11,9 @@ class _PageHomeState extends State<PageHome> {
   Widget build(BuildContext context) {
     return(
       Scaffold(
-        appBar: AppBar(title: Text("data"),), 
+        appBar: app.componet.appBar.getNew(app.config.appName,action: <Widget>[
+          Icon(Icons.more_vert)
+        ]), 
         body: Center(
           child: Text(
             "Hello",

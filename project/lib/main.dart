@@ -13,7 +13,7 @@ void main(){
 }
 
 void onEntry(){
-  print("Chen 3");
+  print("开始");
   runApp(app.page.main);
 }
 

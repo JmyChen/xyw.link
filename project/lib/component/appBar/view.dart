@@ -4,7 +4,7 @@ class ComponetAppBar{
 
   PreferredSizeWidget data;
 
-  PreferredSizeWidget getNew(dynamic title, {double elevation = 0, Color backgroundColor, List<Widget> action}){
+  PreferredSizeWidget getNew(dynamic title, {bool centerTitle = true, double elevation = 0, Color backgroundColor, List<Widget> action}){
     Widget _title;
     if(title is String){
       _title = Text(title);
@@ -13,7 +13,7 @@ class ComponetAppBar{
     }
     data = AppBar(
       title: _title,
-      centerTitle: true,
+      centerTitle: centerTitle,
       elevation: elevation,//去除阴影
       backgroundColor: backgroundColor,
       actions: action,
