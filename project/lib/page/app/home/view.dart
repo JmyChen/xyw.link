@@ -22,6 +22,12 @@ class _PageHomeState extends State<PageHome> {
             ),
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.navigate_next),
+          onPressed: (){
+            app.router.go(context, app.page.wifi);
+          },
+        ),
       )
     );
   }

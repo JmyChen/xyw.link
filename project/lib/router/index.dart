@@ -12,7 +12,7 @@ class Router {
           return FadeTransition(
             opacity: animation,
             child: FadeTransition(
-                opacity:Tween(begin: 0.0, end: 1.0).animate(animation),
+                opacity: Tween(begin: 0.0, end: 1.0).animate(animation),
                 child: child,
               ),
             );
